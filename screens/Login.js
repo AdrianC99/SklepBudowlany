@@ -41,7 +41,7 @@ const Login = () => {
         <StyledContainer>
             <StatusBar style="dark"/>
             <InnerContainer>
-                <PageLogo resizeMode="cover" source={require('./../assets/img/liroj.png')} />
+                <PageLogo resizeMode="cover" source={require('./../assets/img/Budrol.png')} />
                 <PageTitle></PageTitle>
                 <SubTitle>Login:</SubTitle>
                 <Formik
