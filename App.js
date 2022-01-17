@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
 
-//screens
-import Login from './screens/Login';
 
+//react navi
+import RootStack from './navigators/RootStack';
 export default function App(){
-  return <Login />;
+  return <RootStack />;
 }
-
-
- 
 
