@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 //formik
-import {Formik, formik} from 'formik';
+import {Formik} from 'formik';
 
 //icons
-import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
+import {Octicons, Ionicons} from '@expo/vector-icons';
 
 
 
@@ -24,7 +24,13 @@ import {
     ButtonText,
     Colors,
     MsgBox,
+    ExtraText,
+    ExtraView,
+    TextLink,
+    TextLinkContent,
     Line
+
+    
     
 } from './../components/styles';
 import {View} from 'react-native';
@@ -32,23 +38,29 @@ import {View} from 'react-native';
 //colors
 const{brand, darkLight, primary} = Colors;
 
-const Login = () => {
+
+const Login = ({navigation}) => {
 
     const [hidePassword, setHidePassword] = useState(true);
 
 
     return(
-        <StyledContainer>
+        
+            
+            <StyledContainer>
             <StatusBar style="dark"/>
             <InnerContainer>
-                <PageLogo resizeMode="cover" source={require('./../assets/img/Budrol.png')} />
+                <PageLogo resizeMode="cover" source={require('./../assets/img/budrol.png')} />
                 <PageTitle></PageTitle>
                 <SubTitle>Login:</SubTitle>
                 <Formik
                 initialValues={{email: '', password: ''}}
-                onSubmit={(values) =>{
+                onSubmit={(values) =>
+                    {
                     console.log(values);
-                }}
+                    navigation.navigate("Welcome");
+                    }
+                }
                 >{({handleChange, handleBlur, handleSubmit, values}) => (<StyledFromArea>
                  <MyTextInput  
                  label="Email Address"
@@ -79,12 +91,23 @@ const Login = () => {
                      <ButtonText>
                          Login
                      </ButtonText>
-                     </StyledButton>                             
+                     </StyledButton> 
+                     <Line />
+                     <ExtraView>
+                       <ExtraText>Don't have an account? </ExtraText> 
+                       <TextLink onPress={() =>  navigation.navigate("Signup")}>
+                           <TextLinkContent>
+                               Signup
+                           </TextLinkContent>
+                           </TextLink> 
+                    </ExtraView>
                     </StyledFromArea>
                     )}
                </Formik>
             </InnerContainer>
         </StyledContainer>
+    
+        
     );
 };
 
@@ -102,6 +125,7 @@ const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ..
                 </RightIcon>
             )}
         </View>
+        
     )
 }
 
