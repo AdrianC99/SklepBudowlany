@@ -19,8 +19,8 @@ const {primary, secondary, tertiary, darkLight, brand, green, red} = Colors;
 export const StyledContainer = styled.View`
 flex: 1;
 padding: 25px;
-padding-top: ${StatusBarHeight + 10}px;
-background-color: ${primary};
+padding-top: ${StatusBarHeight + 30}px;
+background-color: #f3ecdb;
 `;
 
 export const InnerContainer = styled.View`
@@ -29,27 +29,80 @@ width: 100%;
 align-items: center;
 `;
 
+export const WelcomeContainer = styled(InnerContainer)`
+padding: 25px;
+padding-top: 10px;
+justify-content: center;
+background-color: #f3ecdb;
+`;
+
+export const Avatar = styled. Image`
+width: 100px;
+height: 100px;
+margin: auto;
+border-radius: 50px;
+border-width: 2px;
+border-color: ${secondary};
+margin-bottom: 10px;
+`;
+
+export const WelcomeImage = styled.Image`
+height: 300px;
+min-width: 100%;
+`;
+
 export const PageLogo = styled.Image`
 width: 100%;
 margin-top: 10%;
-height: 25%;
+height: 30%;
+
 `;
 
 export const PageTitle = styled.Text`
 font-size: 30px;
 text-align: center;
 font-weight: bold;
-color: ${brand};
+color: black;
 padding: 10px;
+
+${(props) => props.welcome && `
+font-size: 35px;
+`}
 `;
 
-export const SubTitle = styled.Text`
+export const SubTitleLogin = styled.Text`
+padding: 15px;
+background-color: ${darkLight};
+justify-content: center;
+align-items: center;
+border-radius: 30px;
+margin-vertical: 5px;
+height: 50px;
+width: 100%;
+text-align: center;
 font-size: 18px;
 margin-bottom: 20px;
 letter-spacing: 1px;
 font-weight: bold;
-color: ${tertiary};
+color: ${primary};
+`;
 
+export const SubTitle = styled.Text`
+text-align: center;
+font-size: 18px;
+margin-bottom: 20px;
+letter-spacing: 1px;
+font-weight: bold;
+color: black;
+font-family: sans-serif;
+
+
+
+
+${(props) => props.welcome && `
+ margin-bottom: 5px;
+ font-weight: normal;
+`}
 
 `;
 export const StyledFromArea = styled.View`
@@ -95,7 +148,20 @@ justify-content: center;
 align-items: center;
 border-radius: 5px;
 margin-vertical: 5px;
-height: 60px;
+height: 50px;
+`;
+
+export const StyledButtonCamera = styled.TouchableOpacity`
+padding: 15px;
+background-color: ${brand};
+justify-content: center;
+align-items: center;
+border-radius: 30px;
+margin-vertical: 5px;
+height: 50px;
+width: 60%;
+margin-left: auto;
+margin-right: auto;
 `;
 
 export const ButtonText = styled.Text`
@@ -114,10 +180,26 @@ width:100%;
 background-color: ${darkLight};
 margin-vertical: 10px;
 `;
-
-export const ExtraVIew = styled.View`
+export const ExtraView = styled.View`
 justify-content: center;
 flex-direction: row;
-align-item: center;
+align-items: center;
 padding: 10px;
+`;
+
+export const ExtraText = styled.Text`
+justify-content: center;
+align-content: center;
+color: ${tertiary};
+font-size: 15px;
+`;
+
+export const TextLink = styled.TouchableOpacity`
+justify-content: center;
+align-items: center;
+`;
+
+export const TextLinkContent = styled.Text`
+color: ${brand};
+font-size: 15px;
 `;
