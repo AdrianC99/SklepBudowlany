@@ -49,7 +49,11 @@ const Welcome = ({navigation}) => {
                          Logout
                      </ButtonText>
                      </StyledButton> 
-                     
+                     <StyledButtonCamera onPress={() => {navigation.navigate('Kamera')}}>
+                     <ButtonText>
+                         Camera
+                     </ButtonText>
+                     </StyledButtonCamera> 
                     </StyledFromArea>                  
                </WelcomeContainer>
             </InnerContainer>
