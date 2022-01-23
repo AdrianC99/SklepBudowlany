@@ -18,7 +18,8 @@ import {
     ButtonText,
     WelcomeContainer,
     WelcomeImage,
-    Avatar
+    Avatar,
+    StyledButtonCamera
 
     
     
@@ -49,9 +50,9 @@ const Welcome = ({navigation}) => {
                          Logout
                      </ButtonText>
                      </StyledButton> 
-                     <StyledButtonCamera onPress={() => {navigation.navigate('Kamera')}}>
+                     <StyledButtonCamera onPress={() => {navigation.navigate('Home')}}>
                      <ButtonText>
-                         Camera
+                         Home
                      </ButtonText>
                      </StyledButtonCamera> 
                     </StyledFromArea>                  
