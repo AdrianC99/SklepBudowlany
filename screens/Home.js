@@ -17,7 +17,7 @@ const wydarzeniaName = "Wydarzenia";
 
 
 const Tab = createBottomTabNavigator();
- function HomeScreen({ navigation }) {
+ function Home({ navigation }) {
     return (
 
      
@@ -64,4 +64,4 @@ const Tab = createBottomTabNavigator();
     );
 }
 
-export default HomeScreen;
+export default Home;
